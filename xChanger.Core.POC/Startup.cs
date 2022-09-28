@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using xChanger.Core.POC.Brokers.Sheets;
 using xChanger.Core.POC.Brokers.Storages;
+using xChanger.Core.POC.Services.Coordinations;
 using xChanger.Core.POC.Services.Foundations.ExternalPersons;
 using xChanger.Core.POC.Services.Foundations.Persons;
 using xChanger.Core.POC.Services.Foundations.Pets;
@@ -33,6 +34,7 @@ namespace xChanger.Core.POC
             AddFoundationServices(services);
             AddProcessingServices(services);
             AddOrchestrationServices(services);
+            AddCoordinationServices(services);
 
             services.AddSwaggerGen(c =>
             {
@@ -86,9 +88,15 @@ namespace xChanger.Core.POC
             services.AddTransient<IPetProcessingService, PetProcessingService>();
             services.AddTransient<IExternalPersonProcessingService, ExternalPersonProcessingService>();
         }
+
         private static void AddOrchestrationServices(IServiceCollection services)
         {
             services.AddTransient<IPersonPetOrchestrationService, PersonPetOrchestrationService>();
+        }
+
+        private static void AddCoordinationServices(IServiceCollection services)
+        {
+            services.AddTransient<IExternalPersonWithPetsCoordinationService, ExternalPersonWithPetsCoordinationService>();
         }
     }
 }
