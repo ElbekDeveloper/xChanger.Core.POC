@@ -8,6 +8,7 @@ namespace xChanger.Core.POC.Brokers.Storages
     {
         ValueTask<Person> AddPersonAsync(Person person);
         IQueryable<Person> SelectAllPersons();
+        IQueryable<Person> SelectAllPersonsWithPets();
         ValueTask<Person> UpdatePersonAsync(Person person);
     }
 }
