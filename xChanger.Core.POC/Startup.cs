@@ -9,6 +9,7 @@ using xChanger.Core.POC.Brokers.Storages;
 using xChanger.Core.POC.Services.Foundations.ExternalPersons;
 using xChanger.Core.POC.Services.Foundations.Persons;
 using xChanger.Core.POC.Services.Foundations.Pets;
+using xChanger.Core.POC.Services.Orchestrations.ExternalPersons;
 using xChanger.Core.POC.Services.Orchestrations.PersonPets;
 using xChanger.Core.POC.Services.Processings.ExternalPersons;
 using xChanger.Core.POC.Services.Processings.Persons;
@@ -89,6 +90,7 @@ namespace xChanger.Core.POC
         private static void AddOrchestrationServices(IServiceCollection services)
         {
             services.AddTransient<IPersonPetOrchestrationService, PersonPetOrchestrationService>();
+            services.AddTransient<IExternalPersonOrchestrationService, ExternalPersonOrchestrationService>();
         }
     }
 }
