@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using xChanger.Core.POC.Brokers.Sheets;
 using xChanger.Core.POC.Brokers.Storages;
 using xChanger.Core.POC.Services.Foundations.Persons;
 using xChanger.Core.POC.Services.Foundations.Pets;
@@ -67,6 +68,7 @@ namespace xChanger.Core.POC
         private static void AddBrokers(IServiceCollection services)
         {
             services.AddTransient<IStorageBroker, StorageBroker>();
+            services.AddTransient<ISheetBroker, SheetBroker>();
         }
 
         private static void AddFoundationServices(IServiceCollection services)
