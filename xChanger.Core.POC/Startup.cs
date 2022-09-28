@@ -6,9 +6,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using xChanger.Core.POC.Brokers.Sheets;
 using xChanger.Core.POC.Brokers.Storages;
+using xChanger.Core.POC.Services.Foundations.ExternalPersons;
 using xChanger.Core.POC.Services.Foundations.Persons;
 using xChanger.Core.POC.Services.Foundations.Pets;
 using xChanger.Core.POC.Services.Orchestrations.PersonPets;
+using xChanger.Core.POC.Services.Processings.ExternalPersons;
 using xChanger.Core.POC.Services.Processings.Persons;
 using xChanger.Core.POC.Services.Processings.Pets;
 
@@ -75,12 +77,14 @@ namespace xChanger.Core.POC
         {
             services.AddTransient<IPersonService, PersonService>();
             services.AddTransient<IPetService, PetService>();
+            services.AddTransient<IExternalPersonService, ExternalPersonService>();
         }
 
         private static void AddProcessingServices(IServiceCollection services)
         {
             services.AddTransient<IPersonProcessingService, PersonProcessingService>();
             services.AddTransient<IPetProcessingService, PetProcessingService>();
+            services.AddTransient<IExternalPersonProcessingService, ExternalPersonProcessingService>();
         }
         private static void AddOrchestrationServices(IServiceCollection services)
         {
