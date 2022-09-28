@@ -9,6 +9,7 @@ namespace xChanger.Core.POC.Models.Foundations.Persons
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public int Age { get; set; }
 
         [JsonIgnore]
         public List<Pet> Pets { get; set; }
