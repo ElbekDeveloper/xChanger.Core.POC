@@ -8,6 +8,7 @@ namespace xChanger.Core.POC.Services.Foundations.Persons
     {
         ValueTask<Person> AddPersonAsync(Person person);
         IQueryable<Person> RetrieveAllPersons();
+        IQueryable<Person> RetrieveAllPersonsWithPets();
         ValueTask<Person> UpdatePersonAsync(Person person);
     }
 }

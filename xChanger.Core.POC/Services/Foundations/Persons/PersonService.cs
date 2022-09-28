@@ -18,6 +18,8 @@ namespace xChanger.Core.POC.Services.Foundations.Persons
         public IQueryable<Person> RetrieveAllPersons() =>
             this.storageBroker.SelectAllPersons();
 
+        public IQueryable<Person> RetrieveAllPersonsWithPets() =>
+            this.storageBroker.SelectAllPersonsWithPets();
 
         public async ValueTask<Person> UpdatePersonAsync(Person person) =>
             await storageBroker.UpdatePersonAsync(person);

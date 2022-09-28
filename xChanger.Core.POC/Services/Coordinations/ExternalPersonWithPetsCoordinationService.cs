@@ -45,10 +45,11 @@ namespace xChanger.Core.POC.Services.Coordinations
         private List<PersonPet> MapToPersonWithPets(List<ExternalPerson> formattedExternalPersons)
         {
             List<PersonPet> mappedPersonsWithPet = new List<PersonPet>();
-            Guid personId = Guid.NewGuid();
 
             foreach (ExternalPerson externalPerson in formattedExternalPersons)
             {
+                Guid personId = Guid.NewGuid();
+
                 var mappedPersonWithPet = new PersonPet()
                 {
                     Person = new Person()
