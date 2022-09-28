@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using xChanger.Core.POC.Models.Foundations.Persons;
-using xChanger.Core.POC.Models.Foundations.Pets;
 
 namespace xChanger.Core.POC.Brokers.Storages
 {

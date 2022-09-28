@@ -24,7 +24,7 @@ namespace xChanger.Core.POC.Brokers.Sheets
                 excelPackage.Workbook.Worksheets[PositionID: 0];
 
             await excelPackage.LoadAsync(file);
-            
+
             while (!IsTrailingFinalRow(row, column, workSheet))
             {
                 ExternalPerson externalPerson = new ExternalPerson();
