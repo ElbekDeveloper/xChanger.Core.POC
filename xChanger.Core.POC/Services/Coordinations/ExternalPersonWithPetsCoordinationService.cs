@@ -6,20 +6,20 @@ using xChanger.Core.POC.Models.Foundations.Persons;
 using xChanger.Core.POC.Models.Foundations.Pets;
 using xChanger.Core.POC.Models.Orchestrations.PersonPets;
 using xChanger.Core.POC.Services.Orchestrations.PersonPets;
-using xChanger.Core.POC.Services.Processings.ExternalPersons;
+using xChanger.Core.POC.Services.Orchestrations.ExternalPersons;
 
 namespace xChanger.Core.POC.Services.Coordinations
 {
     public class ExternalPersonWithPetsCoordinationService : IExternalPersonWithPetsCoordinationService
     {
-        private readonly IExternalPersonProcessingService externalPersonProcessingService;
+        private readonly IExternalPersonOrchestrationService externalPersonOrchestrationService;
         private readonly IPersonPetOrchestrationService personPetOrchestrationService;
 
         public ExternalPersonWithPetsCoordinationService(
-            IExternalPersonProcessingService externalPersonProcessingService,
+            IExternalPersonOrchestrationService externalPersonOrchestrationService,
             IPersonPetOrchestrationService personPetOrchestrationService)
         {
-            this.externalPersonProcessingService = externalPersonProcessingService;
+            this.externalPersonOrchestrationService = externalPersonOrchestrationService;
             this.personPetOrchestrationService = personPetOrchestrationService;
         }
 
@@ -27,7 +27,7 @@ namespace xChanger.Core.POC.Services.Coordinations
         {
             var returningPersonsWithPets = new List<PersonPet>();
             List<ExternalPerson> formattedExternalPersons =
-                await this.externalPersonProcessingService.RetrieveFormattedExternalPersonsAsync();
+                await this.externalPersonOrchestrationService.RetrieveFormattedExternalPersonsAsync();
 
             List<PersonPet> personsWithPets = MapToPersonWithPets(formattedExternalPersons);
 
