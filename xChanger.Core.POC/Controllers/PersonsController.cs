@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using RESTFulSense.Controllers;
 using xChanger.Core.POC.Models.Foundations.ExternalPersons;
 using xChanger.Core.POC.Models.Orchestrations.PersonPets;
 using xChanger.Core.POC.Services.Orchestrations.PersonPets;
@@ -10,7 +11,7 @@ namespace xChanger.Core.POC.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PersonsController
+    public class PersonsController : RESTFulController
     {
         private readonly IPersonPetOrchestrationService personPetOrchestrationService;
         private readonly IExternalPersonProcessingService externalPersonProcessingService;
